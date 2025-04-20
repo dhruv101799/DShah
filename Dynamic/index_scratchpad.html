@@ -376,82 +376,90 @@
                 </svg>
             </button>
             <h2 class="text-2xl font-semibold mb-4 text-blue-800">Research Experience</h2>
-            <div class="space-y-4">
-                <div class="bg-white p-4 rounded-lg shadow">
-                    <h3 class="text-lg font-semibold text-gray-800">Research Assistant</h3>
-                    <p class="text-gray-600">Theoretical & Applied Mechanics Group (TAMG), Drexel University</p>
-                    <p class="text-sm text-gray-500">Philadelphia, PA | September 2018 - December 2022</p>
-                    <ul class="mt-2 text-gray-700 detail-list">
-                        <li>Developed in-situ monitoring tool for FDM 3D printers using acoustic emission and computer vision.</li>
-                        <li>Automated feature classification and analysis using deep learning within image segmentation workflows.</li>
-                        <li>Designed compact, inexpensive, and automated respiratory device to combat COVID-19 pandemic.</li>
-                        <li>Communicated weekly project status to sponsors, adapting content for varying technical expertise.</li>
-                    </ul>
+            <div style="display: flex;"> <aside id="research-sidebar" class="w-64 pr-6 hidden">
+                <nav>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Research Projects</h3>
+                    <ul class="space-y-1">
+                        </ul>
+                </nav>
+            </aside>
+            <div id="research-main-content" class="flex-1">
+                <div class="space-y-4">
+                    <div id="tamg-research-assistant" class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold text-gray-800">Research Assistant</h3>
+                        <p class="text-gray-600">Theoretical & Applied Mechanics Group (TAMG), Drexel University</p>
+                        <p class="text-sm text-gray-500">Philadelphia, PA | September 2018 - December 2022</p>
+                        <ul class="mt-2 text-gray-700 detail-list">
+                            <li>Developed in-situ monitoring tool for FDM 3D printers using acoustic emission and computer vision.</li>
+                            <li>Automated feature classification and analysis using deep learning within image segmentation workflows.</li>
+                            <li>Designed compact, inexpensive, and automated respiratory device to combat COVID-19 pandemic.</li>
+                            <li>Communicated weekly project status to sponsors, adapting content for varying technical expertise.</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="mt-6 space-y-2">
-                <h2 class="text-2xl font-semibold mb-4 text-blue-800">Project Summary</h2>
-                <p class="text-gray-600">Here's a quick summary of my main research projects. You can keep scrolling to find out more details!</p>
-                
-                <div class="w-full h-[900px] rounded-lg shadow-md overflow-hidden">
-                    <iframe 
-                    src="Assets/Project Portfolio.pdf#zoom=80" 
-                    width="48%" 
-                    height="100%" 
-                    frameborder="0"
-                    class="rounded"
-                    >
-                    This browser does not support PDFs. Please download the PDF to view it: 
-                    <a href="Assets/Project Portfolio.pdf">Download PDF</a>.
-                    </iframe>
+                <div class="mt-6 space-y-2">
+                    <h2 class="text-2xl font-semibold mb-4 text-blue-800">Project Summary</h2>
+                    <p class="text-gray-600">Here's a quick summary of my main research projects. You can keep scrolling to find out more details!</p>
                     
-                </div>
-            </div>
-            <br>
-            <hr>
-            <div class="mt-6 space-y-2">
-                <h2 class="text-2xl font-semibold mb-4 text-blue-800">Theoretical & Applied Mechanics Group (TAMG)</h2>
-                <h3 class="text-xl font-semibold text-gray-800">Dragon Resuscitator: COVID 19 R&D Initiative</h3>
-                <p class="text-gray-600">This is an incredible project where I got to work as the lead designer for medical equipment during the COVID-19 lockdown.</p>
-                
-                <div class="w-full h-[900px] rounded-lg shadow-md overflow-hidden">
-                    <iframe 
-                    src="Assets/Dragon Resuscitator - IMECE Poster.pdf#zoom=15" 
-                    width="81%" 
-                    height="100%" 
-                    frameborder="0"
-                    class="rounded"
-                    >
-                    This browser does not support PDFs. Please download the PDF to view it: 
-                    <a href="Assets/Dragon Resuscitator - IMECE Poster.pdf">Download PDF</a>.
-                    </iframe>
-                    
+                    <div id="project-summary" class="w-full h-[900px] rounded-lg shadow-md overflow-hidden">
+                        <iframe 
+                        src="Assets/Project Portfolio.pdf#zoom=80" 
+                        width="48%" 
+                        height="100%" 
+                        frameborder="0"
+                        class="rounded"
+                        >
+                        This browser does not support PDFs. Please download the PDF to view it: 
+                        <a href="Assets/Project Portfolio.pdf">Download PDF</a>.
+                        </iframe>
+                        
+                    </div>
                 </div>
                 <br>
-                <p class="font-semibold text-gray-600">Product Commercial</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/AmDtVRKJGKI?si=fD2OuETk2918TZdf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <br>
-            <hr>
-            <div class="mt-6 space-y-2">
-                <h3 class="text-xl font-semibold text-gray-800">STAR Scholars: Summer Research Program</h3>
-                <p class="text-gray-600">This poster details a summer research project I did to develop a closed-loop monitoring system for FDM 3D printers.</p>
-                
-                <div class="w-full h-[900px] rounded-lg shadow-md overflow-hidden">
-                    <iframe 
-                    src="Assets/STAR Scholars Poster - Dhruv Shah.pdf" 
-                    width="81%" 
-                    height="100%" 
-                    frameborder="0"
-                    class="rounded"
-                    >
-                    This browser does not support PDFs. Please download the PDF to view it: 
-                    <a href="Assets/STAR Scholars Poster - Dhruv Shah.pdf">Download PDF</a>.
-                    </iframe>
+                <hr>
+                <div class="mt-6 space-y-2">
+                    <h2 class="text-2xl font-semibold mb-4 text-blue-800">Theoretical & Applied Mechanics Group (TAMG)</h2>
+                    <h3 class="text-xl font-semibold text-gray-800">Dragon Resuscitator: COVID 19 R&D Initiative</h3>
+                    <p class="text-gray-600">This is an incredible project where I got to work as the lead designer for medical equipment during the COVID-19 lockdown.</p>
                     
+                    <div id="resuscitator-project" class="w-full h-[900px] rounded-lg shadow-md overflow-hidden">
+                        <iframe 
+                        src="Assets/Dragon Resuscitator - IMECE Poster.pdf#zoom=15" 
+                        width="81%" 
+                        height="100%" 
+                        frameborder="0"
+                        class="rounded"
+                        >
+                        This browser does not support PDFs. Please download the PDF to view it: 
+                        <a href="Assets/Dragon Resuscitator - IMECE Poster.pdf">Download PDF</a>.
+                        </iframe>
+                        
+                    </div>
+                    <br>
+                    <p class="font-semibold text-gray-600">Product Commercial</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/AmDtVRKJGKI?si=fD2OuETk2918TZdf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <br>
+                <hr>
+                <div class="mt-6 space-y-2">
+                    <h3 class="text-xl font-semibold text-gray-800">STAR Scholars: Summer Research Program</h3>
+                    <p class="text-gray-600">This poster details a summer research project I did to develop a closed-loop monitoring system for FDM 3D printers.</p>
+                    
+                    <div id="star-project" class="w-full h-[900px] rounded-lg shadow-md overflow-hidden">
+                        <iframe 
+                        src="Assets/STAR Scholars Poster - Dhruv Shah.pdf" 
+                        width="81%" 
+                        height="100%" 
+                        frameborder="0"
+                        class="rounded"
+                        >
+                        This browser does not support PDFs. Please download the PDF to view it: 
+                        <a href="Assets/STAR Scholars Poster - Dhruv Shah.pdf">Download PDF</a>.
+                        </iframe>
+                        
+                    </div>
                 </div>
             </div>
-
         </div>
 
         <!-- Skills Section -->
