@@ -248,7 +248,7 @@
 /* Sidebar Styles */
 #research-sidebar {
   position: sticky;
-  top: 6rem;
+  top: 0rem;
   height: calc(100vh - 8rem);
   overflow-y: auto;
   padding-top: 1rem;
