@@ -247,13 +247,13 @@
 
 /* Sidebar Styles */
 #research-sidebar {
-  position: sticky; /* Make the sidebar sticky */
-  top: 6rem;          /* Adjust top offset as needed to clear header */
-  height: calc(100vh - 8rem); /* Adjust height to fit viewport minus header */
-  overflow-y: auto;    /* Enable scrolling within the sidebar if needed */
+  position: sticky;
+  top: 6rem;
+  height: calc(100vh - 8rem);
+  overflow-y: auto;
   padding-top: 1rem;
-  border-right: 1px solid #e5e7eb; /* Add a border for visual separation */
-  margin-top: -5rem; /* adjust margin to align with content */
+  /* border-right: 1px solid #e5e7eb; */ /* Removed right border */
+  margin-top: -5rem;
 }
 
 #research-sidebar ul {
@@ -265,24 +265,46 @@
   margin-bottom: 0.5rem;
 }
 
-#research-sidebar a {
+#research-sidebar > ul > li > a { /* Direct h3 link */
   color: #4b5563;
   text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid #e5e7eb; /* Added bottom border */
+  margin-bottom: 0.5rem; /* Added margin to separate h3 links */
+  padding-bottom: 0.5rem;
+}
+
+#research-sidebar > ul > li > a:hover {
+  color: #3b82f6;
+}
+
+#research-sidebar ul li ul { /* Nested ul for h2 links */
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+}
+
+#research-sidebar ul li ul li a { /* h2 links */
+  color: #6b7280;
+  text-decoration: none;
   font-size: 0.9rem;
-  display: block; /* Make the whole li clickable */
+  display: block;
   padding: 0.25rem 0;
   transition: color 0.2s ease;
 }
 
-#research-sidebar a:hover {
+#research-sidebar ul li ul li a:hover {
   color: #3b82f6;
-  font-weight: 500;
 }
 
 /* Adjust main content padding to accommodate sidebar */
 #research-main-content {
-  flex: 1; /* Take up remaining space */
-  padding-left: 0; /* Remove default padding from tab content */
+  flex: 1;
+  padding-left: 0;
 }
 
 /* Hide on small screens */
@@ -290,7 +312,8 @@
   #research-sidebar {
       display: none;
   }
-  #research-main-content{
+
+  #research-main-content {
       padding-left: 0;
   }
 }

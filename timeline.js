@@ -189,51 +189,62 @@ document.addEventListener('DOMContentLoaded', function () {
     // New code for Research tab sidebar
     const researchTab = document.getElementById('research-experience');
     const researchSidebar = document.getElementById('research-sidebar');
-    const researchMainContent = document.getElementById('research-main-content'); // Get the main content container
-
+    const researchMainContent = document.getElementById('research-main-content');
 
     if (researchTab && researchSidebar) {
         const sidebarList = researchSidebar.querySelector('ul');
         let sidebarInitialized = false;
 
-        // Function to generate the sidebar
         function generateResearchSidebar() {
             if (!sidebarList) return;
-            sidebarList.innerHTML = ''; // Clear any existing content
-            const projectHeaders = researchMainContent.querySelectorAll('h2'); // Target the h2 within the main content
+            sidebarList.innerHTML = '';
+            const headers = researchMainContent.querySelectorAll('h3, h2'); // Select both h3 and h2
 
-            projectHeaders.forEach(header => {
-                const projectId = header.parentElement.id; // Get the parent id
-                if(projectId){
-                     const listItem = document.createElement('li');
-                    const link = document.createElement('a');
-                    link.href = `#${projectId}`;
-                    link.textContent = header.textContent;
+            let currentParentListItem = null;
+
+            headers.forEach(header => {
+                const projectId = header.parentElement.id;
+                if (!projectId) return;
+
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = `#${projectId}`;
+                link.textContent = header.textContent;
+
+                if (header.tagName === 'H3') {
                     listItem.appendChild(link);
                     sidebarList.appendChild(listItem);
+                    currentParentListItem = listItem; // Store the h3's li
+                } else if (header.tagName === 'H2' && currentParentListItem) {
+                    // If it's an h2 and we have a parent, nest it
+                    let subList = currentParentListItem.querySelector('ul');
+                    if (!subList) {
+                        subList = document.createElement('ul');
+                        currentParentListItem.appendChild(subList);
+                    }
+                    const subListItem = document.createElement('li');
+                    subListItem.appendChild(link);
+                    subList.appendChild(subListItem);
                 }
-
             });
             sidebarInitialized = true;
-            researchSidebar.classList.remove('hidden'); // Show the sidebar
+            researchSidebar.classList.remove('hidden');
         }
 
-        // Event listener for Research tab activation
         document.querySelector('[data-target="research-experience"]').addEventListener('click', function () {
             setTimeout(() => {
                 if (!sidebarInitialized) {
                     generateResearchSidebar();
                 } else {
-                    researchSidebar.classList.remove('hidden'); // Show the sidebar
+                    researchSidebar.classList.remove('hidden');
                 }
             }, 300);
         });
 
-        // Event listener for closing the Research tab
         researchTab.addEventListener('click', (event) => {
             const closeButton = event.target.closest('.close-btn');
             if (closeButton) {
-                researchSidebar.classList.add('hidden'); // Hide the sidebar
+                researchSidebar.classList.add('hidden');
                 sidebarInitialized = false;
             }
         });
