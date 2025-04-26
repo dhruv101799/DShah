@@ -240,8 +240,146 @@
             display: inline-block; 
             vertical-align: middle;
         }
+
+        /* Add this to the bottom of your <style> section in index.html */
+        @media (max-width: 1024px) {
+        #tab-container {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .tab {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+        }
+        #header-personal-info {
+            display: none;
+        }
+        }
+
+        @media (max-width: 768px) {
+        #landing-name {
+            font-size: 2rem;
+        }
+        #landing-contact {
+            flex-direction: column;
+            space-y-2;
+        }
+        #summary-box-container {
+            width: 100%;
+            max-width: 90%;
+        }
+        header#main-header {
+            flex-direction: column;
+            height: auto;
+            padding: 1rem 0;
+        }
+        nav#tab-container {
+            justify-content: center;
+            width: 100%;
+            display: none; /* Hide tabs by default */
+        }
+        #hamburger {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 1rem;
+            cursor: pointer;
+        }
+        }
+
+        @media (max-width: 480px) {
+        .tab-content {
+            padding: 1rem;
+        }
+        .tab {
+            width: 100%;
+            text-align: center;
+        }
+        iframe {
+            width: 100% !important;
+            height: auto !important;
+        }
+        }
+
+        /* Hamburger Icon */
+        #hamburger {
+        display: none;
+        flex-direction: column;
+        width: 30px;
+        height: 25px;
+        justify-content: space-between;
+        transition: transform 0.3s ease;
+        }
+
+        #hamburger span {
+        display: block;
+        height: 4px;
+        background: #1e40af;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        }
+
+        #hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+        }
+        #hamburger.open span:nth-child(2) {
+        opacity: 0;
+        }
+        #hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Force research project figures to have the same height */
+        .project-figures {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .project-figures figure {
+            flex: 1 1 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+        }
+
+        .project-figures img {
+            height: 500px; /* Fixed height for both images */
+            width: auto; /* Keep natural aspect ratio */
+            object-fit: cover; /* Zoom and crop if needed to fill */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-figures figcaption {
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
+<script>
+    // Add this just before </body> tag in index.html
+    const hamburger = document.createElement('div');
+    hamburger.id = 'hamburger';
+    hamburger.innerHTML = '<span></span><span></span><span></span>';
+
+    document.getElementById('main-header').prepend(hamburger);
+
+    hamburger.addEventListener('click', () => {
+    const tabContainer = document.getElementById('tab-container');
+    hamburger.classList.toggle('open');
+    if (tabContainer.style.display === 'flex') {
+        tabContainer.style.display = 'none';
+    } else {
+        tabContainer.style.display = 'flex';
+        tabContainer.style.flexWrap = 'wrap';
+    }
+    });
+</script>
 <body class="bg-slate-50">
     <!-- Landing Page with Personal Information -->
     <div id="landing-wrapper">
@@ -255,7 +393,7 @@
                 <svg class="landing-contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" /><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" /></svg>
                 dhruv.shah.1017@gmail.com
             </span>
-            <a href="#" class="inline-flex items-center text-gray-700 hover:text-blue-700 hover:underline">
+            <a href="https://www.linkedin.com/in/dhruv-shah-ml/" class="inline-flex items-center text-gray-700 hover:text-blue-700 hover:underline">
                 <svg class="landing-contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
                 LinkedIn
             </a>
@@ -267,6 +405,8 @@
                 </p>
             </div>
         </div>
+        <br>
+        
     </div>
 
     <!-- Header with Navigation Tabs -->
@@ -283,7 +423,7 @@
                     <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" /><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" /></svg>
                     dhruv.shah.1017@gmail.com
                 </span>
-                <a href="#" class="inline-flex items-center text-gray-700 hover:text-blue-700 hover:underline">
+                <a href="https://www.linkedin.com/in/dhruv-shah-ml/" class="inline-flex items-center text-gray-700 hover:text-blue-700 hover:underline">
                     <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
                     LinkedIn
                 </a>
@@ -467,14 +607,14 @@
                         <div id="project-7" class="mt-6 space-y-2">
                             <h2 class="text-xl font-semibold text-gray-800">CFE Prototype</h2>
                             <p class="text-gray-600">I supported the design, manufacturing, and assembly phases of this project to create a physical prototype of a centrifugal fuel element (CFE) capable of validating the proposed concept and providing a comprehensive foundation for subsequent CNTR development.</p>
-                            <div class="flex flex-wrap justify-center gap-8 my-4">
-                                <figure class="w-full md:w-1/4 flex-col">
-                                    <img src="Assets/full_cfe.png" alt="Complete assembly of CFE prototype" class="rounded-lg shadow-md object-cover">
-                                    <figcaption class="text-center text-sm text-gray-500 mt-2"><i>Complete assembly of CFE prototype</i></figcaption>
+                            <div class="project-figures">
+                                <figure>
+                                    <img src="Assets/full_cfe.png" alt="Complete assembly of CFE prototype">
+                                    <figcaption><i>Complete assembly of CFE prototype</i></figcaption>
                                 </figure>
-                                <figure class="w-full md:w-1/4 flex-col">
-                                    <img src="Assets/turbine_spin.gif" alt="Rotating turbine and stator subassembly" class="rounded-lg shadow-md object-cover">
-                                    <figcaption class="text-center text-sm text-gray-500 mt-2"><i>Rotating turbine and stator subassembly</i></figcaption>
+                                <figure>
+                                    <img src="Assets/turbine_spin.gif" alt="Rotating turbine and stator subassembly">
+                                    <figcaption><i>Rotating turbine and stator subassembly</i></figcaption>
                                 </figure>
                             </div>
                         </div>
