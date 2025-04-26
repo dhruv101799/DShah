@@ -216,6 +216,11 @@
             height: 1.5rem; 
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         /* --- Utility List Styling --- */
         .detail-list li { 
             position: relative; 
@@ -298,6 +303,10 @@
         iframe {
             width: 100% !important;
             height: auto !important;
+            min-height: 80vh;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
         }
         }
 
@@ -528,11 +537,12 @@
                         <h3 class="text-2xl font-semibold mb-4 text-blue-800">Research Overview</h3>
                         <p class="text-gray-600">Here's a quick summary of my main research projects. You can keep scrolling to find out more details!</p>
                         
-                        <div class="w-full h-[900px] overflow-hidden">
+                        <div>
                             <iframe 
-                            src="Assets/Project Portfolio.pdf#zoom=80" 
-                            width="57%" 
-                            height="100%" 
+                            src="Assets/Project Portfolio.pdf#view=FitH" 
+                            width="100%" 
+                            height="100%"
+                            style="min-height: 80vh; border-radius: 0.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"  
                             frameborder="0"
                             class="rounded"
                             >
@@ -563,22 +573,12 @@
                         <h2 class="text-xl font-semibold text-gray-800">Dragon Resuscitator: COVID 19 R&D Initiative</h2>
                         <p class="text-gray-600">This is an incredible project where I got to work as the lead designer for medical equipment during the COVID-19 lockdown.</p>
                         
-                        <div class="w-full h-[900px] overflow-hidden">
-                            <iframe 
-                            src="Assets/Dragon Resuscitator - IMECE Poster.pdf#zoom=15" 
-                            width="98%" 
-                            height="100%" 
-                            frameborder="0"
-                            class="rounded"
-                            >
-                            This browser does not support PDFs. Please download the PDF to view it: 
-                            <a href="Assets/Dragon Resuscitator - IMECE Poster.pdf">Download PDF</a>.
-                            </iframe>
-                            
+                        <div>
+                            <img src="Assets/Dragon Resuscitator - IMECE Poster.jpg" title="Dragon Resuscitator Poster">
                         </div>
                         <br>
                         <p class="font-semibold text-gray-600">Product Commercial</p>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/AmDtVRKJGKI?si=fD2OuETk2918TZdf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/AmDtVRKJGKI?si=fD2OuETk2918TZdf" title="Dragon Resuscitator" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <br>
                     <hr>
@@ -586,18 +586,8 @@
                         <h2 class="text-xl font-semibold text-gray-800">STAR Scholars: Summer Research Program</h2>
                         <p class="text-gray-600">This poster details a summer research project I did to develop a closed-loop monitoring system for FDM 3D printers.</p>
                         
-                        <div class="w-full h-[900px] overflow-hidden">
-                            <iframe 
-                            src="Assets/STAR Scholars Poster - Dhruv Shah.pdf#zoom=31" 
-                            width="98%" 
-                            height="100%" 
-                            frameborder="0"
-                            class="rounded"
-                            >
-                            This browser does not support PDFs. Please download the PDF to view it: 
-                            <a href="Assets/STAR Scholars Poster - Dhruv Shah.pdf">Download PDF</a>.
-                            </iframe>
-                            
+                        <div>
+                            <img src="Assets/STAR Scholars Poster - Dhruv Shah.jpg" title="Star Scholars Poster"> 
                         </div>
                     </div>
                     <div id="project-5" class="mt-6 space-y-2">
@@ -622,28 +612,20 @@
                         <div id="project-8" class="mt-6 space-y-2">
                             <h2 class="text-xl font-semibold text-gray-800">CNTR Project Poster</h2>
                             <p class="text-gray-600">A component of our final senior design curriculum was to create a physical prototype and present our results to a panel of judges. We received 2<sup>nd</sup> place in a competition with other teams across the College of Engineering.</p>    
-                            <div class="w-full h-[900px] overflow-hidden">
-                                <iframe 
-                                src="Assets/CNTR Poster.pdf#zoom=15" 
-                                width="98%" 
-                                height="100%" 
-                                frameborder="0"
-                                class="rounded"
-                                >
-                                This browser does not support PDFs. Please download the PDF to view it: 
-                                <a href="Assets/CNTR Poster.pdf">Download PDF</a>.
-                                </iframe>
+                            <div>
+                                <img src="Assets/CNTR Poster.jpg" title="CNTR Poster">
                             </div>
                         </div>
                         <br>
                         <div id="project-9" class="mt-6 space-y-2">
                             <h2 class="text-xl font-semibold text-gray-800">Published Work</h2>
                             <p class="text-gray-600">During the course of this project, we took the initiative to publish a paper to the 2023 Nuclear and Emerging Technologies for Space (NETS) conference, hosted by the American Nuclear Society. The paper provides an in-depth analysis of the parametric study of the CNTR. I helped model the pressure drop through the porous medium within a rotating centrifugal fuel element.</p>
-                            <div class="w-full h-[900px] overflow-hidden">
+                            <div>
                                 <iframe 
-                                src="Assets/Parametric Analysis of the Design Point for a Centrifugal Nuclear Thermal Rocket Fuel Element.pdf#zoom=80" 
-                                width="57%" 
-                                height="100%" 
+                                src="Assets/Parametric Analysis of the Design Point for a Centrifugal Nuclear Thermal Rocket Fuel Element.pdf#view=FitH" 
+                                width="100%" 
+                                height="100%"
+                                style="min-height: 80vh; border-radius: 0.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"  
                                 frameborder="0"
                                 class="rounded"
                                 >
